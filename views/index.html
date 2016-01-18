@@ -20,14 +20,39 @@
 
         <section class="signing">
             <div class="row">
-                <button class="btn btn-primary btn-lg sign-btn">Sign up with Email</button>
+                <button class="btn btn-primary btn-lg sign-btn with-email">Sign up with Email</button>
             </div>
             <div class="row">
                 <button class="btn btn-danger btn-lg sign-btn">Sign up with Google</button>
             </div>
             <div class="row">
-                <button class="btn btn-link btn-lg sign-btn">Already have an account? Sign in</button>
+                <button class="btn btn-link btn-lg sign-btn already">Already have an account? Sign in</button>
             </div>
+        </section>
+        <section class="formstuff">
+            <form action="/auth/email" role="form">
+                <div class="form-group"><input type="text" required placeholder="Name" class="form-control" name="name"></div>
+                <div class="form-group"><input type="email" required placeholder="Email Address" class="form-control" name="email"></div>
+                <div class="form-group"><input type="password" required placeholder="Password" class="form-control" name="password"></div>
+                <div class="form-group"><input type="password" required placeholder="Confirm Password" class="form-control" name="password-confirm"></div>
+                <div class="form-group">
+                    <select name="city" id="" class="form-control">
+                        <option value="City" disabled selected>City</option>
+                        <option value="ahmedabad">Ahmedabad</option>
+                        <option value="xyz">To be filled</option>
+                    </select>
+                </div>
+                <button type="submit" value="submit" name="submit" class="btn btn-primary btn-lg">Register me</button>
+                <button class="btn btn-warning btn-lg cancel">Cancel</button>
+            </form>
+        </section>
+        <section class="alreadyform">
+            <form action="/auth/email2" role="form">
+                <div class="form-group"><input type="email" required placeholder="Email Address" class="form-control" name="email"></div>
+                <div class="form-group"><input type="password" required placeholder="Password" class="form-control" name="password"></div>
+                <button type="submit" value="submit" name="submit" class="btn btn-primary btn-lg">Sign in</button>
+                <button class="btn btn-warning btn-lg cancel-already">Cancel</button>
+            </form>
         </section>
         <div class="push"></div>
     </div>
@@ -37,7 +62,7 @@
         </div>
     </footer>
     <script src="js/jquery.min.js"></script>
-    <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/myapp.js"></script>
 </body>
 </html>

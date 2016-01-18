@@ -95,6 +95,16 @@ footer, .push {
     font-size: 14px;
 }
 
+section.formstuff,section.alreadyform{
+    margin-top: 3%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2B2922 !important;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
+}
+
 @media screen and (max-width: 720px) {
     .zomato-img{
         margin-top: 7vh;
