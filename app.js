@@ -11,7 +11,22 @@ var passport = require('passport')
     , util = require('util')
 
     , session = require('express-session');
+//mongoDB
+var dbConfig=require('./config/dbConfig');
+var mongoose = require ("mongoose"); // The reason for this demo.
 
+// Here we find an appropriate database to connect to, defaulting to
+// localhost if we don't find one.
+var uristring =dbConfig.dburl;
+// Makes connection asynchronously.  Mongoose will queue up database
+// operations and release them when the connection is complete.
+mongoose.createConnection(uristring, function (err, res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + uristring);
+    }
+});
 
 // configure Express
 app.set('views', __dirname + '/views');
