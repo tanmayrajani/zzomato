@@ -1,3 +1,4 @@
+var User=require('../../models/user');
 var config=require('../../config/authConfig');
 module.exports=function(passport,authRouter){
     var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -16,6 +17,7 @@ module.exports=function(passport,authRouter){
             clientID:config.googleAuth.clientid,
             clientSecret:config.googleAuth.clientSecreat,
             callbackURL: config.googleAuth.callbackUrl
+
         },
         function(accessToken, refreshToken, profile, done) {
             // asynchronous verification, for effect...
@@ -35,7 +37,36 @@ module.exports=function(passport,authRouter){
     authRouter.get('/google/callback',
         passport.authenticate('google', { failureRedirect: '/login' }),
         function(req, res) {
-            console.log(req.user)
-            res.json(req.user);
+            //console.log(req.user)
+
+            googleuser = new User();
+            console.log(req.user._json.emails[0].value)
+            User.find({'email':req.user._json.emails[0].value},function(err,user){
+                if(err)
+                {
+                    res.status(500).send(err);
+                }
+                if(user)
+                {
+                    res.send('User account already exists');
+                }
+                else
+                {
+                    googleuser.google.email=req.user._json.emails[0].value;
+                    googleuser.google.id=req.user._json.id;
+                    googleuser.google.name=req.user._json.displayName;
+                    googleuser.google.photoUrl=req.user._json.image.url;
+                    googleuser.save(function(err){
+                        if(err){
+                            res.status(500).send(err);
+                        }
+                        else
+                        {
+                            res.send("User account added");
+                        }
+                    })
+                }
+            })
+            //res.json(req.user);
         });
 };
