@@ -9,13 +9,24 @@ blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: no
 table {	border-collapse: collapse;	border-spacing: 0;}
 /* CSS RESET ENDS*/
 
-body{
+html,body{
     background-color: #ca1e2c;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .image {
     position: relative;
-    width: 100%; /* for IE 6 */
+    width: 100%;
 }
 
 span.tagline {
@@ -54,9 +65,34 @@ section.signing{
     font-size: 16px;
     color: whitesmoke;
 }
+
 .sign-btn.btn-link{
     border:none;
     margin-top: 15px;
+}
+
+.sign-btn:hover{
+    text-decoration: none;
+    border: 2px solid #4F4D3F;
+}
+
+.sign-btn.btn-link:hover{
+    text-decoration: underline;
+    color: whitesmoke;
+    border: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto -100px;
+}
+
+footer, .push {
+    height: 100px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 720px) {
@@ -68,6 +104,18 @@ section.signing{
     }
     .sign-btn{
         font-size: 14px;
+    }
+
+    .wrapper {
+        margin: 0 auto -50px;
+    }
+
+    footer, .push {
+        height: 50px;
+        font-size: 12px;
+        line-height: 1.5em;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
 
