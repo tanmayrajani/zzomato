@@ -17,13 +17,12 @@
     "googleapis": "^2.1.7",
     "gulp": "^3.9.0",
     "gulp-nodemon": "^2.0.6",
-
     "method-override": ">= 2.0.2",
-
     "mongoose": "^4.3.6",
     "morgan": ">= 1.1.1",
     "passport": ">= 0.0.0",
     "passport-facebook": ">= 0.0.0",
-    "passport-google-oauth": "^0.2.0"
+    "passport-google-oauth": "^0.2.0",
+    "path": "^0.12.7"
   }
 }

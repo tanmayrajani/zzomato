@@ -7,6 +7,7 @@ var logger = require('morgan')
     , session = require('express-session')
     , methodOverride = require('method-override');
 
+var path = require('path');
 var passport = require('passport')
     , util = require('util')
 
@@ -39,6 +40,9 @@ app.use(session({ secret: 'keyboard cat' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
 
 authRouter=require('./router/auth')(passport);
