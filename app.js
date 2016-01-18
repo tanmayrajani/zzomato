@@ -39,6 +39,7 @@ app.use(methodOverride());
 app.use(session({ secret: 'keyboard cat' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
