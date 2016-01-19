@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400);
+
+/*CSS RESET ::: DO NOT EDIT*/
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary,time, mark, audio, video {    margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {	display: block;}body {	line-height: 1;}
+ol, ul {	list-style: none;}
+blockquote, q {	quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}
+table {	border-collapse: collapse;	border-spacing: 0;}
+/* CSS RESET ENDS*/
+
+html,body{
+    background-color: #ca1e2c;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+}
+
+span.tagline {
+    position: absolute;
+    text-align: center;
+    top: 80%;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-stretch: extra-expanded;
+    font-size: 14px;
+    width: 100%;
+}
+
+.zomato-img{
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:13vh;
+    color: white;
+}
+
+section.signing{
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.sign-btn{
+    border:2px solid #4F4D3F;
+    min-width: 220px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+.sign-btn.btn-link{
+    border:none;
+    margin-top: 15px;
+}
+
+.sign-btn:hover{
+    text-decoration: none;
+    border: 2px solid #4F4D3F;
+}
+
+.sign-btn.btn-link:hover{
+    text-decoration: underline;
+    color: whitesmoke;
+    border: none;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin: 0 auto -100px;
+}
+
+footer, .push {
+    height: 100px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 720px) {
+    .zomato-img{
+        margin-top: 7vh;
+    }
+    span.tagline{
+        font-size: 13px;
+    }
+    .sign-btn{
+        font-size: 14px;
+    }
+
+    .wrapper {
+        margin: 0 auto -50px;
+    }
+
+    footer, .push {
+        height: 50px;
+        font-size: 12px;
+        line-height: 1.5em;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    span.tagline{
+        font-size: 15px;
+    }
+}
