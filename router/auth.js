@@ -3,8 +3,6 @@ var app=express()
 var http=require("http");
 var User = require('../models/user');
 var request = require('request');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/myappdatabase');
 var config=require('../config/authConfig');
 var authRouter = express.Router();
 

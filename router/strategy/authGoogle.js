@@ -39,23 +39,27 @@ module.exports=function(passport,authRouter){
         function(req, res) {
             //console.log(req.user)
 
-            googleuser = new User();
-            console.log(req.user._json.emails[0].value)
-            User.find({'email':req.user._json.emails[0].value},function(err,user){
+            var googleuser = new User({
+                google:{
+                    email:req.user._json.emails[0].value,
+                    name:req.user._json.displayName,
+                    id:req.user._json.id,
+                    photoUrl:req.user._json.image.url}});
+
+            //console.log(req.user._json.emails[0].value);
+            User.find({"email": req.user._json.emails[0].value},function(err,user){
+                console.log(user);
                 if(err)
                 {
                     res.status(500).send(err);
                 }
-                if(user)
-                {
+                if(user.google!=null)
+                {   console.log(user);
+
                     res.send('User account already exists');
                 }
                 else
                 {
-                    googleuser.google.email=req.user._json.emails[0].value;
-                    googleuser.google.id=req.user._json.id;
-                    googleuser.google.name=req.user._json.displayName;
-                    googleuser.google.photoUrl=req.user._json.image.url;
                     googleuser.save(function(err){
                         if(err){
                             res.status(500).send(err);
@@ -66,7 +70,9 @@ module.exports=function(passport,authRouter){
                         }
                     })
                 }
-            })
+
+            });
+
             //res.json(req.user);
         });
 };
