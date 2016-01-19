@@ -39,6 +39,7 @@ span.tagline {
     font-stretch: extra-expanded;
     font-size: 14px;
     width: 100%;
+    cursor: default;
 }
 
 .zomato-img{
@@ -71,7 +72,7 @@ section.signing{
     margin-top: 15px;
 }
 
-.sign-btn:hover{
+.sign-btn:hover,.sign-btn:link,.sign-btn:visited,.sign-btn:active{
     text-decoration: none;
     border: 2px solid #4F4D3F;
 }
@@ -100,14 +101,32 @@ section.formstuff,section.alreadyform{
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
     color: #2B2922 !important;
     font-family: 'Montserrat', sans-serif;
     display: none;
 }
 
+.orr{
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.authlink{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.authlink:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
 @media screen and (max-width: 720px) {
     .zomato-img{
-        margin-top: 7vh;
+        margin-top: 5vh;
     }
     span.tagline{
         font-size: 13px;
@@ -118,6 +137,10 @@ section.formstuff,section.alreadyform{
 
     .wrapper {
         margin: 0 auto -50px;
+    }
+
+    section.formstuff,section.alreadyform{
+        margin-bottom: 20px;
     }
 
     footer, .push {

@@ -20,10 +20,13 @@
 
         <section class="signing">
             <div class="row">
-                <button class="btn btn-primary btn-lg sign-btn with-email">Sign up with Email</button>
+                <button class="btn btn-warning btn-lg sign-btn with-email">Sign up with Email</button>
             </div>
             <div class="row">
-                <button class="btn btn-danger btn-lg sign-btn">Sign up with Google</button>
+                <button class="btn btn-danger btn-lg sign-btn"><a class="authlink" href="/auth/google">Sign up with Google</a></button>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary btn-lg sign-btn"><a class="authlink" href="/auth/facebook">Sign up with Facebook</a></button>
             </div>
             <div class="row">
                 <button class="btn btn-link btn-lg sign-btn already">Already have an account? Sign in</button>
@@ -53,6 +56,13 @@
                 <button type="submit" value="submit" name="submit" class="btn btn-primary btn-lg">Sign in</button>
                 <button class="btn btn-warning btn-lg cancel-already">Cancel</button>
             </form>
+            <div class="row orr"><span>OR</span></div>
+            <div class="row">
+                <button class="btn btn-danger btn-lg sign-btn"><a class="authlink" href="/auth/google">Sign in with Google</a></button>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary btn-lg sign-btn"><a class="authlink" href="/auth/facebook">Sign in with Facebook</a></button>
+            </div>
         </section>
         <div class="push"></div>
     </div>
